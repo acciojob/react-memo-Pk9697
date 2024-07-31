@@ -1,19 +1,10 @@
 import React, { useMemo, useState } from 'react'
+import ReactMemo from './ReactMemo'
+import UseMemo from './UseMemo'
 
 function App() {
+    console.log('App rendered')
 	const [todos, setTodos] = useState([])
-	const [count, setCount] = useState(0)
-	const [tasks, setTasks] = useState([])
-	const [task, setTask] = useState('')
-	const expensiveCalculation = useMemo(() => {
-		return 1000000000+count
-	}, [count])
-
-	const handleSubmit = (e) => {
-		e.preventDefault()
-		setTasks((prev) => [...prev, task])
-		setTask('')
-	}
 
 	return (
 		<div id='main'>
@@ -33,42 +24,10 @@ function App() {
 				Add Todo
 			</button>
 			<hr />
-			<p>
-				Count: <span id='incr-cnt'>{count}</span>{' '}
-				<button id='incr-btn' onClick={() => setCount((prev) => prev + 1)}>
-					+
-				</button>
-			</p>
-
-			<h1>Expensive Calculation</h1>
-			<p id='calc'>{expensiveCalculation}</p>
+			<UseMemo />
 			<hr />
 			<hr />
-			<h1>React.memo</h1>
-			<form onSubmit={handleSubmit}>
-				<input
-					id='skill-input'
-					type='text'
-					value={task}
-					onChange={(e) => setTask(e.target.value)}
-					required
-					minLength='5'
-				/>
-				<button
-					id='skill-btn'
-					type='submit'
-					// onClick={() => setTasks((prev) => [...prev, task])}
-				>
-					Add Skill
-				</button>
-			</form>
-			<ul>
-				{tasks.map((task, index) => (
-					<li key={index} id={`item-${task}`}>
-						{task}
-					</li>
-				))}
-			</ul>
+			<ReactMemo />
 		</div>
 	)
 }
