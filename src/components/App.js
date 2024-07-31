@@ -33,7 +33,7 @@ function App() {
 			<hr />
 			<p>
 				Count: {count}{' '}
-				<button id='incr-cnt' onClick={() => setCount(count + 1)}>
+				<button id='incr-cnt' onClick={() => setCount((prev)=>prev + 1)}>
 					+
 				</button>
 			</p>
@@ -62,7 +62,7 @@ function App() {
 			</form>
 			<ul>
 				{tasks.map((task, index) => (
-					<li key={index}>{task}</li>
+					<li key={index} id={`item-${task}`}>{task}</li>
 				))}
 			</ul>
 		</div>
