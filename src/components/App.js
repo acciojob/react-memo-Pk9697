@@ -6,8 +6,8 @@ function App() {
 	const [tasks, setTasks] = useState([])
 	const [task, setTask] = useState('')
 	const expensiveCalculation = useMemo(() => {
-		return 1000000000
-	}, [])
+		return 1000000000+count
+	}, [count])
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
