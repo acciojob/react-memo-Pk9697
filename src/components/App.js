@@ -34,7 +34,7 @@ function App() {
 			<p>
 				Count: {count}{' '}
 				<button id='incr-cnt' onClick={() => setCount((prev)=>prev + 1)}>
-					+
+					{count}
 				</button>
 			</p>
 
