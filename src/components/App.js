@@ -21,7 +21,9 @@ function App() {
 			<h1>My todos</h1>
 			<ul>
 				{todos.map((todo, index) => (
-					<li key={index} id={`todo-${index}`}>{todo}</li>
+					<li key={index} id={`todo-${index}`}>
+						{todo}
+					</li>
 				))}
 			</ul>
 			<button
@@ -32,9 +34,9 @@ function App() {
 			</button>
 			<hr />
 			<p>
-				Count: {count}{' '}
-				<button id='incr-cnt' onClick={() => setCount((prev)=>prev + 1)}>
-					{count}
+				Count: <span id='incr-cnt'>{count}</span>{' '}
+				<button id='incr-btn' onClick={() => setCount((prev) => prev + 1)}>
+					+
 				</button>
 			</p>
 
@@ -62,7 +64,9 @@ function App() {
 			</form>
 			<ul>
 				{tasks.map((task, index) => (
-					<li key={index} id={`item-${task}`}>{task}</li>
+					<li key={index} id={`item-${task}`}>
+						{task}
+					</li>
 				))}
 			</ul>
 		</div>
