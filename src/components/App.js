@@ -39,7 +39,7 @@ function App() {
 			</p>
 
 			<h1>Expensive Calculation</h1>
-			<p>{expensiveCalculation}</p>
+			<p id='calc'>{expensiveCalculation}</p>
 			<hr />
 			<hr />
 			<h1>React.memo</h1>
