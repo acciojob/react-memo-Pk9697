@@ -21,7 +21,7 @@ function App() {
 			<h1>My todos</h1>
 			<ul>
 				{todos.map((todo, index) => (
-					<li key={index}>{todo}</li>
+					<li key={index} id={`todo-${index}`}>{todo}</li>
 				))}
 			</ul>
 			<button
@@ -53,7 +53,8 @@ function App() {
 					minLength='5'
 				/>
 				<button
-					id='add-skill-btn'
+					id='skill-btn'
+					type='submit'
 					// onClick={() => setTasks((prev) => [...prev, task])}
 				>
 					Add Skill
